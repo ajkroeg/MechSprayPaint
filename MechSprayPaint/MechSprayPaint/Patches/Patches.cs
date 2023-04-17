@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using BattleTech;
 using BattleTech.Data;
-using Harmony;
 using MechSprayPaint.Framework;
 
 namespace MechSprayPaint.Patches
@@ -58,8 +53,8 @@ namespace MechSprayPaint.Patches
                                 targetActor.Combat.DataManager, paintInfo);
                             var pilotableActorRepresentation = targetActor.GameRep as PilotableActorRepresentation;
                             if (pilotableActorRepresentation == null) return;
-                            Traverse.Create(pilotableActorRepresentation).Field("paintSchemeInitialized")
-                                .SetValue(false);
+                            pilotableActorRepresentation.paintSchemeInitialized = false;
+                            //Traverse.Create(pilotableActorRepresentation).Field("paintSchemeInitialized").SetValue(false);
                             pilotableActorRepresentation.InitPaintScheme(newHeraldry, targetActor.team.GUID);
 
                         }

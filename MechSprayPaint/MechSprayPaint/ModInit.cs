@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Harmony;
 using System.Reflection;
 using MechSprayPaint.Framework;
 using Newtonsoft.Json;
@@ -29,10 +28,10 @@ namespace MechSprayPaint
                 ModInit.modSettings = new Settings();
             }
 
-
             ModInit.modLog.LogMessage($"Initializing {HarmonyPackage} - Version {typeof(Settings).Assembly.GetName().Version}");
-            var harmony = HarmonyInstance.Create(HarmonyPackage);
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+            //var harmony = HarmonyInstance.Create(HarmonyPackage);
+            //harmony.PatchAll(Assembly.GetExecutingAssembly());
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), HarmonyPackage);
         }
     }
     class Settings
