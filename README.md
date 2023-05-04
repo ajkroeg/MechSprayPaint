@@ -1,5 +1,6 @@
 # MechSprayPaint
 
+**v1.1.0.1 and higher requires IRBTModUtils**
 **v1.1.0.0 and higher requires modtek v3 or higher**
 
 Enables specified effects with EffectTriggerType OnHit to change the paintjob of the unit hit. You can have a paintgun actually paint mechs.
