@@ -15,7 +15,7 @@ namespace MechSprayPaint.Framework
         public string tertiaryMechColorID = "";
 
     }
-    class Util
+    public class Util
     {
         public static void Initialize()
         {
