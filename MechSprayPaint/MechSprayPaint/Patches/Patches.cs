@@ -46,8 +46,8 @@ namespace MechSprayPaint.Patches
                                 x.effectID == effect.EffectData.Description.Id);
                         if (paintInfo != null)
                         {
-                            ModInit.modLog.LogMessage($"Sometimes when you have a thing!");
-                            ModInit.modLog.LogMessage($"The reason for the thing, is that you have it!");
+                            ModInit.modLog?.Info?.Write($"Sometimes when you have a thing!");
+                            ModInit.modLog?.Info?.Write($"The reason for the thing, is that you have it!");
 
                             var newHeraldry = Util.GetNewHeraldry(targetActor.team.HeraldryDef,
                                 targetActor.Combat.DataManager, paintInfo);

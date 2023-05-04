@@ -3,10 +3,10 @@ using System.IO;
 
 namespace MechSprayPaint
 {
-    class Logger
+    public class Logger
     {
-        private static StreamWriter logStreamWriter;
-        private bool enableLogging = false;
+        public static StreamWriter logStreamWriter;
+        public bool enableLogging = false;
 
         public Logger(string modDir, string fileName, bool enableLogging)
         {

@@ -34,40 +34,50 @@
   <PropertyGroup>
     <!-- avoids IgnoresAccessChecksToAttribute warnings -->
     <PublicizerRuntimeStrategies>Unsafe</PublicizerRuntimeStrategies>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <AssemblyVersion>1.1.0.1</AssemblyVersion>
+    <FileVersion>1.1.0.1</FileVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Framework\Logger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Framework\Logger.cs" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer" Version="2.2.1" />
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="HarmonyX" Version="2.10.1">
-      <PrivateAssets>all</PrivateAssets>
+      <publicAssets>all</publicAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
+      <public>False</public>
+    </Reference>
+	<Reference Include="IRBTModUtils">
+      <HintPath>$(MechSprayPaintModPath)\..\IRBTModUtils\IRBTModUtils.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <Private>False</Private>
+      <public>False</public>
     </Reference>
     <Reference Include="System">
-      <Private>False</Private>
+      <public>False</public>
     </Reference>
     <Reference Include="System.Core">
-      <Private>False</Private>
+      <public>False</public>
     </Reference>
     <Reference Include="UnityEngine">
-      <Private>False</Private>
+      <public>False</public>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <Private>False</Private>
+      <public>False</public>
     </Reference>
     <Reference Include="UnityEngine.UI" Publicize="true">
-      <Private>False</Private>
+      <public>False</public>
     </Reference>
   </ItemGroup>
 </Project>

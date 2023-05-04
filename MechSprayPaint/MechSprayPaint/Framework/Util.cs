@@ -20,11 +20,11 @@ namespace MechSprayPaint.Framework
         public static void Initialize()
         {
             var dm = UnityGameInstance.BattleTechGame.DataManager;
-            ModInit.modLog.LogMessage($"A different swatch for every day, why not?");
+            ModInit.modLog?.Info?.Write($"A different swatch for every day, why not?");
             foreach (var color in dm.ColorSwatches)
             {
                 SwatchHolder.swatches.Add(color.Key);
-                ModInit.modLog.LogMessage($"{color.Key}");
+                ModInit.modLog?.Info?.Write($"{color.Key}");
             }
         }
 
@@ -36,7 +36,7 @@ namespace MechSprayPaint.Framework
                 Initialize();
             }
             var idx = Random.Range(0, SwatchHolder.swatches.Count);
-            ModInit.modLog.LogMessage($"Mmmm Mmm Mmm {SwatchHolder.swatches[idx]} is a lovely color");
+            ModInit.modLog?.Info?.Write($"Mmmm Mmm Mmm {SwatchHolder.swatches[idx]} is a lovely color");
             return SwatchHolder.swatches[idx];
         }
 
